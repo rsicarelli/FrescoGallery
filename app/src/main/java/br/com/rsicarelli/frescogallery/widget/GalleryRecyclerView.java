@@ -10,13 +10,11 @@ public class GalleryRecyclerView extends RecyclerView {
     private int columnWidth = -1;
 
     public GalleryRecyclerView(Context context) {
-        super(context);
-        init(context, null);
+        this(context, null, 0);
     }
 
     public GalleryRecyclerView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init(context, attrs);
+        this(context, attrs, 0);
     }
 
     public GalleryRecyclerView(Context context, AttributeSet attrs, int defStyle) {
