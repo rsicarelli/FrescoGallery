@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="column_width">100dp</dimen>
+    <dimen name="item_margin">4dp</dimen>
+</resources>
