@@ -18,14 +18,14 @@ import java.util.List;
 
 public class GalleryUtils {
 
-    public static List<GalleryPhoto> getImagesOnDevice(Context context) {
+    public static ArrayList<GalleryPhoto> getImagesOnDevice(Context context) {
         String[] columns = new String[]{
                 MediaStore.Images.Media._ID,
                 MediaStore.Images.Media.DATA,
                 MediaStore.Images.Media.SIZE
         };
 
-        List<GalleryPhoto> elements = new ArrayList<>();
+        ArrayList<GalleryPhoto> elements = new ArrayList<>();
 
         Cursor cursor;
 
