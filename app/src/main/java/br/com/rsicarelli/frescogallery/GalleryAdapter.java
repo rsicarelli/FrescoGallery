@@ -13,9 +13,6 @@ import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 class GalleryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private int columnSize;
@@ -28,16 +25,14 @@ class GalleryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     class GalleryHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.drawee_view_photo)
         SimpleDraweeView draweeView;
-
-        @BindView(R.id.size)
         TextView size;
 
         GalleryHolder(View view) {
             super(view);
 
-            ButterKnife.bind(this, view);
+            draweeView = (SimpleDraweeView) view.findViewById(R.id.drawee_view_photo);
+            size = (TextView) view.findViewById(R.id.size);
 
             draweeView.setLayoutParams(
                     new FrameLayout.LayoutParams(
