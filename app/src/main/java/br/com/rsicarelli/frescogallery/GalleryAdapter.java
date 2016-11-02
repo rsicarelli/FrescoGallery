@@ -17,16 +17,19 @@ public class GalleryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     private int columnSize;
     private final List<GalleryPhoto> galleryPhotos;
-    private Context context;
+    private final Context context;
+    private final OnGalleryClickListener listener;
 
-    public  GalleryAdapter(List<GalleryPhoto> galleryPhotos, Context context) {
+    public GalleryAdapter(List<GalleryPhoto> galleryPhotos, Context context, OnGalleryClickListener listener) {
         this.galleryPhotos = galleryPhotos;
         this.context = context;
+        this.listener = listener;
     }
 
     public class GalleryHolder extends RecyclerView.ViewHolder {
         SimpleDraweeView draweeView;
         TextView size;
+        GalleryPhoto galleryPhoto;
 
         GalleryHolder(View view) {
             super(view);
@@ -39,10 +42,17 @@ public class GalleryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                             ViewGroup.LayoutParams.MATCH_PARENT,
                             columnSize)
             );
+
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.onItemSelected(galleryPhoto);
+                }
+            });
         }
     }
 
-    public  class EmptyHolder extends RecyclerView.ViewHolder {
+    public class EmptyHolder extends RecyclerView.ViewHolder {
         EmptyHolder(View itemView) {
             super(itemView);
         }
@@ -69,6 +79,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     photoGallery.imageUri
             ));
             galleryHolder.size.setText(Formatter.formatFileSize(context, Long.parseLong(photoGallery.size)));
+            galleryHolder.galleryPhoto = photoGallery;
         }
     }
 
@@ -80,4 +91,9 @@ public class GalleryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public void setColumnSize(int columnWidth) {
         this.columnSize = columnWidth;
     }
+
+    public interface OnGalleryClickListener {
+        void onItemSelected(GalleryPhoto galleryPhoto);
+    }
+
 }
