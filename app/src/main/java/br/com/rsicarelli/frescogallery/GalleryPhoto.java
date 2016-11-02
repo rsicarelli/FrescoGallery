@@ -4,11 +4,11 @@ package br.com.rsicarelli.frescogallery;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-class GalleryPhoto implements Parcelable {
+public class GalleryPhoto implements Parcelable {
     final String imageUri;
     final String size;
 
-    GalleryPhoto(String imageUri, String size) {
+    public  GalleryPhoto(String imageUri, String size) {
         this.imageUri = imageUri;
         this.size = size;
     }
