@@ -16,9 +16,9 @@ import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
-class GalleryUtils {
+public class GalleryUtils {
 
-    static List<GalleryPhoto> getImagesOnDevice(Context context) {
+    public static List<GalleryPhoto> getImagesOnDevice(Context context) {
         String[] columns = new String[]{
                 MediaStore.Images.Media._ID,
                 MediaStore.Images.Media.DATA,
@@ -60,7 +60,7 @@ class GalleryUtils {
                 Environment.MEDIA_MOUNTED_READ_ONLY.equals(state);
     }
 
-    static DraweeController getDefaultDraweeController(final String path) {
+    public  static DraweeController getDefaultDraweeController(final String path) {
         Uri uriPhoto = Uri.parse("file://" + path);
 
         ImageRequest request = ImageRequestBuilder.newBuilderWithSource(uriPhoto)

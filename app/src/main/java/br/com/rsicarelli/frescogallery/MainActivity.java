@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         galleryRecyclerView = (GalleryRecyclerView) findViewById(R.id.recycler_photos);
     }
 
-    void setUpPhotos() {
+    public void setUpPhotos() {
         galleryRecyclerView.addItemDecoration(new MarginDecoration(this));
         galleryRecyclerView.setHasFixedSize(true);
 

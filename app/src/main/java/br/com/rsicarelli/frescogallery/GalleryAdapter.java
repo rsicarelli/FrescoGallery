@@ -13,18 +13,18 @@ import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
-class GalleryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class GalleryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private int columnSize;
     private final List<GalleryPhoto> galleryPhotos;
     private Context context;
 
-    GalleryAdapter(List<GalleryPhoto> galleryPhotos, Context context) {
+    public  GalleryAdapter(List<GalleryPhoto> galleryPhotos, Context context) {
         this.galleryPhotos = galleryPhotos;
         this.context = context;
     }
 
-    class GalleryHolder extends RecyclerView.ViewHolder {
+    public class GalleryHolder extends RecyclerView.ViewHolder {
         SimpleDraweeView draweeView;
         TextView size;
 
@@ -42,7 +42,7 @@ class GalleryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
     }
 
-    class EmptyHolder extends RecyclerView.ViewHolder {
+    public  class EmptyHolder extends RecyclerView.ViewHolder {
         EmptyHolder(View itemView) {
             super(itemView);
         }
@@ -77,7 +77,7 @@ class GalleryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return galleryPhotos.size();
     }
 
-    void setColumnSize(int columnWidth) {
+    public void setColumnSize(int columnWidth) {
         this.columnSize = columnWidth;
     }
 }
