@@ -5,8 +5,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class GalleryPhoto implements Parcelable {
-    final String imageUri;
-    final String size;
+    public final String imageUri;
+    public final String size;
 
     public  GalleryPhoto(String imageUri, String size) {
         this.imageUri = imageUri;
