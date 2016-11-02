@@ -12,7 +12,7 @@ import br.com.rsicarelli.frescogallery.widget.GalleryRecyclerView;
 public class MainActivity extends AppCompatActivity implements GalleryAdapter.OnGalleryClickListener {
     private static final String EXTRA_GALLERY_PHOTO = "extraGalleryPhoto";
 
-    GalleryRecyclerView galleryRecyclerView;
+    private GalleryRecyclerView galleryRecyclerView;
 
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements GalleryAdapter.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        galleryRecyclerView = (GalleryRecyclerView) findViewById(R.id.recycler_photos);
+        galleryRecyclerView = (GalleryRecyclerView) findViewById(R.id.photos);
         setUpPhotos();
     }
 
